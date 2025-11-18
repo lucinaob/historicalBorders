@@ -24,30 +24,33 @@
 #' @export
 map <- function(country, year, data = historicData, ...){
 
-  country_name <- country #tolower(country)
+  country_name <- country
 
-  if(!(country_name %in% data$name)){
+  if(!(country_name %in% data$NAME)){
     stop(paste0("No country named ", country, " found in the data. Did you spell everything correctly?"))
   }
 
-  mapOptions <- data[data$name == country_name, ]
+  mapOptions <- data |>
+    subset(NAME == country_name)
 
-  if(!(year %in% mapOptions$year)){
+  if(!(year %in% mapOptions$YEAR)){
     message(paste0("Map dated to ", year, " not found. Using closest year in dataset."))
-    differences <- abs(mapOptions$year - year)
+    differences <- abs(mapOptions$YEAR - year)
     closest_index <- which.min(differences)
     year <- mapOptions$year[closest_index]
     message("Using map dated to ", year)
   }
 
-  to_map <- mapOptions[mapOptions$year == year, ]
+  to_map <- subset(mapOptions$year == year)
 
   #Below this is all filler - we will make an actual map
   #of the given country in a given year,
   #but currently don't have the data to do this.
   #Instead, function will return data frame
-  map <- to_map
+  #map <- to_map
 
-  return(map)
+
+  plot(to_map)
+  #return(map)
 }
 
