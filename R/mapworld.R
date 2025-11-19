@@ -22,6 +22,10 @@
 #' @export
 mapworld <- function(year, dataset = NULL){
 
+  if(!is.numeric(year)){
+    stop("You must supply a numeric year")
+  }
+
   data <- read_sf('data/world_years.geojson')
 
   options <- unique(data$year)
