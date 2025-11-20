@@ -1,3 +1,14 @@
+#' Africa Map
+#'
+#' @param year The year the user wants to see reflected by borders
+#' @param dataset The dataset of historical borders.
+#'
+#' @return This function will generate a historic map ggplot object of Africa at a given time period.
+#' @export
+#'
+#' @examples
+#' mapAfrica(1800)
+#' mapAfrica(1850)
 mapAfrica <- function(year, dataset = NULL){
 
   data <- read_sf('data/world_years.geojson')

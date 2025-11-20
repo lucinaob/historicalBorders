@@ -1,6 +1,6 @@
 Package: historicalBorders
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Map Worldwide Historic Borders From 1800 Onwards
 Version: 0.1.0
 Authors@R: c(
     person(given = "Lily", family = "Gould", email = "lsgould@smith.edu", role = c("aut", "cre")),

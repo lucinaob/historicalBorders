@@ -1,3 +1,14 @@
+#' South America Map
+#'
+#' @param year The year the user wants to see reflected by borders.
+#' @param dataset The dataset of historical borders.
+#'
+#' @return This function will return a map of South America at a given time period.
+#' @export
+#'
+#' @examples
+#' mapSouthAmerica(1800)
+#' mapSouthAmerica(1827)
 mapSouthAmerica <- function(year, dataset = NULL){
 
   data <- read_sf('data/world_years.geojson')

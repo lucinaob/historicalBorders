@@ -10,7 +10,7 @@
 #' that year will be mapped instead.
 #'
 #'
-#' @param year The year to visualize
+#' @param year The year the user wants to see reflected by borders.
 #' @param dataset The optional additional dataset to graph onto a map
 #'
 #' @returns A world map ggplot object, with borders dated to a given year
