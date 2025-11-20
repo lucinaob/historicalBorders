@@ -5,13 +5,6 @@
 #'
 #' @return This function will return a map of Asia at a given time period.
 #'
-#' @importFrom ggplot2 ggplot
-#' @importFrom ggplot2 geom_sf
-#' @importFrom ggplot2 theme_void
-#' @importFrom ggplot2 ylim
-#' @importFrom ggplot2 xlim
-#' @importFrom sf st_read
-#'
 #' @export
 #'
 #' @examples
