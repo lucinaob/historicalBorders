@@ -1,0 +1,65 @@
+---
+title: "overview"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(historicalBorders)
+```
+
+`historicalBorders` is an R package for producing visualizations of historical maps. Utilizing the `sf` and `ggplot2` packages, `historicalBorders` allows users to plot data over historical borders, from the 1800s until today. Maps are available in 50-year increments, built off of the [\`historic-basemaps\`](https://github.com/aourednik/historical-basemaps) repo.
+
+## Base Maps
+
+To plot the whole world at a given point in time, a user can use the `mapworld` function, specifying a certain year:
+
+```{r}
+mapworld(1800)
+```
+
+If a user gives a year that is not included in the dataset, the function will display the map from the closest year.
+
+```{r}
+mapworld(1875)
+```
+
+## Mapping Continents
+
+If a user only wants to visualize a certain continent, they can do so by choosing a `map[Continent]` function:
+
+```{r}
+mapAsia(1900)
+```
+
+Six options are available:
+
+-   `mapNorthAmerica()`
+
+-   `mapSouthAmerica()`
+
+-   `mapEurope()`
+
+-   `mapAfrica()`
+
+-   `mapAsia()`
+
+-   `mapOceania()`
+
+## Custom Mapping
+
+If a user wants to only visualize a certain area of the world, they can visualize a custom area using coordinate pairs. The function `mapCustom()` will map a given are on a given year by `mapCustom([year], [pair of latitudes], [pair of longitudes])`
+
+```{r}
+mapCustom(1900, c(20, 65), c(15, 45))
+```
