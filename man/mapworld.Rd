@@ -7,7 +7,7 @@
 mapworld(year, dataset = NULL)
 }
 \arguments{
-\item{year}{The year to visualize}
+\item{year}{The year the user wants to see reflected by borders.}
 
 \item{dataset}{The optional additional dataset to graph onto a map}
 }
