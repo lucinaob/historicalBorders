@@ -26,7 +26,7 @@ mapworld <- function(year, dataset = NULL){
     stop("You must supply a numeric year")
   }
 
-  data <- read_sf('data/world_years.geojson')
+  data <- read_sf('data/world.geojson')
 
   options <- unique(data$year)
 

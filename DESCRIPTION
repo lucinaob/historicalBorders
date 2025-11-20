@@ -3,21 +3,20 @@ Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
 Authors@R: c(
-    person(
-      "Lucy", " O'Brien",
-      email = "lfobrien@smith.edu",
-      role = c("aut", "cre"), 
-        person(
-      "Lily", "Gould",
-      email = "lsgould@smith.edu",
-      role = c("aut", "cre")
-    )
-  )
+    person(given = "Lily", family = "Gould", email = "lsgould@smith.edu", role = c("aut", "cre")),
+    person(given = "Lucy", family = "Gould", email = "lfobrien@smith.edu", role = c("aut")))
 Description: This package allows a user to select a continent, region, or country as well as a specific date and maps the borders in that area at that time. .
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Depends: 
+    R (>= 3.5)
+Imports:
+    dplyr,
+    tidyverse,
+    ggplot2,
+    sf
