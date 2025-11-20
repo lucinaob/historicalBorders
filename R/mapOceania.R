@@ -11,7 +11,7 @@
 #' mapOceania(1875)
 mapOceania <- function(year, dataset = NULL){
 
-  data <- read_sf('data/world_years.geojson')
+  data <- st_read('data/world.geojson')
 
   options <- unique(data$year)
 

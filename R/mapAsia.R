@@ -4,6 +4,14 @@
 #' @param dataset The dataset of historical borders.
 #'
 #' @return This function will return a map of Asia at a given time period.
+#'
+#' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 geom_sf
+#' @importFrom ggplot2 theme_void
+#' @importFrom ggplot2 ylim
+#' @importFrom ggplot2 xlim
+#' @importFrom sf st_read
+#'
 #' @export
 #'
 #' @examples
@@ -12,7 +20,7 @@
 #'
 mapAsia <- function(year, dataset = NULL){
 
-  data <- read_sf('data/world_years.geojson')
+  data <- st_read('data/world.geojson')
 
   options <- unique(data$year)
 

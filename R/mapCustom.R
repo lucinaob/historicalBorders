@@ -9,11 +9,11 @@
 #' @export
 #'
 #' @examples
-#' mapCustom(1800, 43.29N, 74.21W)
-#' mapCustom(1820, 48.85N, 2.35E)
+#' mapCustom(1800, c(43.29, 57.10), c(74.21, 100.7))
+#' mapCustom(1820, c(48.85, 55.5), c(2.35, 10.8))
 #'
 mapCustom <- function(year, lat, long, dataset = NULL){
-  data <- read_sf('data/world_years.geojson')
+  data <- st_read('data/world.geojson')
 
   if(length(lat) != 2 || length(long) != 2){
     stop("Please enter 2 pairs of latitude and longitude values!")

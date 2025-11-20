@@ -38,6 +38,3 @@ install.packages("historicalBorders", repos = c("<https://r-tmap.r-universe.dev>
 Details:
 
 Users have dates to choose from spanning to back to 1800 and incremented by every 50 years. Users can examine different scales, including country vs region vs world.
-
->>>>>>> 966a22a95063d66bf8c65af9dcd7c0e621dc54af
-The borders closest to the year inputted by the user will be returned (ex: if a user inputted 1847, it would return a map of borders in 1850).

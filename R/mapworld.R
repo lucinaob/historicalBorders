@@ -15,6 +15,11 @@
 #'
 #' @returns A world map ggplot object, with borders dated to a given year
 #'
+#' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 geom_sf
+#' @importFrom ggplot2 theme_void
+#' @importFrom sf st_read
+#'
 #' @examples
 #' mapworld(1800)
 #' mapworld(1875)
@@ -26,7 +31,7 @@ mapworld <- function(year, dataset = NULL){
     stop("You must supply a numeric year")
   }
 
-  data <- read_sf('data/world.geojson')
+  data <- st_read('data/world.geojson')
 
   options <- unique(data$year)
 
