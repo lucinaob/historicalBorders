@@ -1,3 +1,17 @@
+#' Custom Map
+#'
+#' @param year The year the user wants to see reflected by borders.
+#' @param lat The latitude of the area the user wants to map.
+#' @param long The longitude of the area the user wants to map.
+#' @param dataset The dataset of historical borders.
+#'
+#' @return A custom map of the latitude and longitudes specified by R.
+#' @export
+#'
+#' @examples
+#' mapCustom(1800, 43.29N, 74.21W)
+#' mapCustom(1820, 48.85N, 2.35E)
+#'
 mapCustom <- function(year, lat, long, dataset = NULL){
   data <- read_sf('data/world_years.geojson')
 
