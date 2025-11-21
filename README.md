@@ -1,8 +1,24 @@
-# Use:
+```         
+---
+title: "historicalBorders"
+author: "Lucy O'Brien and Lily Gould"
+date: "2025-11-18"
+output: 
+  html_document:
+    keep_md: true
+---
+```
+**Use:**
 
-This package allows the user to choose a continent, region, or country and the year that they want to visualize, and a static map producing the location's borders (lasting 10+ years) will be shown at this time is generated. Users have dates to choose from spanning to back to 1800 and incremented by every 50 years. Users can examine different scales, including country vs region vs world.
+The historicalBorders package allows users to visualize political boundaries for a selected continent, region, or country at a specific point in history. Users can specify a year, and the package will generate a static map displaying the borders of the chosen location. The map reflects borders that were stable for at least 10 years. This provides a historically accurate snapshot of geopolitical boundaries.
 
-# **Installation**
+**Details:**
+
+Users have dates to choose from spanning to back to 1800 and incremented by every 50 years. Users can examine different scales, including at the country, continent, and world levels. Users also have the option of inputting custom latitude and longitude values to map a desired region of the world. 
+
+The borders closest to the year inputted by the user will be returned (ex: if a user inputted 1847, it would return a map of borders in 1850). If the user inputs a year that is not within the range of years included in the package, an error will be returned. 
+
+**Installation**
 
 Installing historicalBorders can be done through the use of
 
@@ -10,12 +26,10 @@ Installing historicalBorders can be done through the use of
 install.packages("historicalBorders")
 ```
 
-or
+*Development Version* \# \# install.packages("remotes") remotes::install_github("r-historicalBorders/historicalBorders")
 
-```{r}
-remotes::install_github("https://github.com/lucinaob/historicalBorders")
-```
+**install.packages("pak")**
 
-# Details:
+pak::pak("r-historicalBorders/historicalBorders")
 
-Users have dates to choose from spanning to back to 1800 and incremented by every 50 years. Users can examine different scales, including country vs region vs world.
+
