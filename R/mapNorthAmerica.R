@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param year The year the user wants to see reflected by borders.
+#' @param dataset The dataset to map over historical borders.
+#'
+#' @returns This function will return a map of North American at a given time period.
+#'
+#' @examples
+#' mapNorthAmerica(1800)
+#'
+#' @export
 mapNorthAmerica <- function(year, dataset = NULL){
 
   data <- st_read('data/world.geojson')
