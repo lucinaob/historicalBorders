@@ -31,7 +31,7 @@ mapworld <- function(year, dataset = NULL){
     stop("You must supply a numeric year")
   }
 
-  data <- st_read('data/world.geojson')
+  data <- historicalBorders::world
 
   options <- unique(data$year)
 

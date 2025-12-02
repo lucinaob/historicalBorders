@@ -13,7 +13,8 @@
 #' mapCustom(1820, c(48.85, 55.5), c(2.35, 10.8))
 #'
 mapCustom <- function(year, lat, long, dataset = NULL){
-  data <- st_read('data/world.geojson')
+
+  data <- historicalBorders::world
 
   if(length(lat) != 2 || length(long) != 2){
     stop("Please enter 2 pairs of latitude and longitude values!")

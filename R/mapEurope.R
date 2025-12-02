@@ -11,7 +11,7 @@
 #' mapEurope(1849)
 mapEurope <- function(year, dataset = NULL){
 
-  data <- st_read('data/world.geojson')
+  data <- historicalBorders::world
 
   options <- unique(data$year)
 

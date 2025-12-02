@@ -6,12 +6,14 @@
 #' @return This function will generate a historic map ggplot object of Africa at a given time period.
 #' @export
 #'
+#' @importFrom ggplot2 ggplot geom_sf theme_void ylim xlim
+#'
 #' @examples
 #' mapAfrica(1800)
 #' mapAfrica(1850)
 mapAfrica <- function(year, dataset = NULL){
 
-  data <- st_read('data/world.geojson')
+  data <- historicalBorders::world
 
   options <- unique(data$year)
 
