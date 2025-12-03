@@ -30,6 +30,7 @@ mapRegion <- function(year, region, dataset = NULL) {
     "Central Asia"        = c(xmin = 45,  xmax = 90,  ymin = 30,  ymax = 55),
     "Eastern Asia"        = c(xmin = 100, xmax = 150, ymin = 20,  ymax = 55),
     "South-eastern Asia"  = c(xmin = 92,  xmax = 150, ymin = -12, ymax = 25),
+    "Southern Asia"       = c(xmin = 60,  xmax = 100, ymin = 5, ymax = 38),
     "Western Asia"        = c(xmin = 25,  xmax = 60,  ymin = 12,  ymax = 45),
 
     # EUROPE
@@ -76,7 +77,7 @@ mapRegion <- function(year, region, dataset = NULL) {
 
   print(
     ggplot(data) +
-      geom_sf +
+      geom_sf() +
       coord_sf(xlim = c(xmin, xmax), ylim = c(ymin, ymax), expand = FALSE) +
       ggtitle(paste0(region, " in ", year)) +
       theme_void()
