@@ -1,23 +1,15 @@
-**Use:**
+# Historic Borders
 
-The historicalBorders package allows users to visualize political boundaries for a selected continent, region, or country at a specific point in history. Users can specify a year, and the package will generate a static map displaying the borders of the chosen location. The map reflects borders that were stable for at least 10 years. This provides a historically accurate snapshot of geopolitical boundaries.
+This package allows users to visualize political boundaries for a selected continent, region, or country at a specific point in history. Building upon existing ways of visualizing spatial data, we aimed to create a way for R users to map data over historic borders from the last 200 years. In this, we can visualize data in a way that makes sense historically — showing the borders that people throughout history would have understood and lived within. Maps generated with this package are derived from the [historic-basemaps](https://github.com/aourednik/historical-basemaps) repository.
 
-**Details:**
+# Details
 
-Users have dates to choose from spanning to back to 1800 and incremented by every 50 years. Users can examine different scales, including at the country, continent, and world levels. Users also have the option of inputting custom latitude and longitude values to map a desired region of the world.
+Users have historic maps choose from spanning to back to 1800, with options of years viewable using `optionsYears()`. If a user ever tries to map a year that is not in the data, functions will map historic borders from the closest year available. Users can also map historic borders at different scales, including at the country, regional, continent, and global level. If a user wishes to map a more specific region of the world, they can customize a map using `mapCustom()` and inserting latitude and longitude pairs they wish to visualize within.
 
-The borders closest to the year inputted by the user will be returned (ex: if a user inputted 1847, it would return a map of borders in 1850). If the user inputs a year that is not within the range of years included in the package, an error will be returned.
+# **Installation**
 
-**Installation**
-
-Installing historicalBorders can be done through the use of
+One can install the package using:
 
 ```{r}
-install.packages("historicalBorders")
-```
-
-Alternately, one can install the package using:
-
-```{r}
-remotes::install_github("r-historicalBorders/historicalBorders")
+remotes::install_github("lucinaob/historicalBorders")
 ```

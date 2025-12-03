@@ -1,3 +1,4 @@
 exportPattern("^[[:alpha:]]+")
-importFrom(ggplot2, ggplot, geom_sf, theme_void, ylim, xlim)
+importFrom(ggplot2, ggplot, geom_sf, theme_void, ylim, xlim, coord_sf, ggtitle)
 import(sf)
+importFrom(utils, View)

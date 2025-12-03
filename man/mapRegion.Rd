@@ -9,6 +9,8 @@ mapRegion(year, region, dataset = NULL)
 \arguments{
 \item{year}{The year the user wants to see reflected by borders.}
 
+\item{region}{The region a user wants to map}
+
 \item{dataset}{The dataset of historical borders.}
 }
 \value{

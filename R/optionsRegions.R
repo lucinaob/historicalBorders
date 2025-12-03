@@ -10,7 +10,7 @@
 #' options_regions("Africa)
 #'
 #' @export
-options_regions <- function(continent = NULL){
+optionsRegions <- function(continent = NULL){
   regions = historicalBorders::regions
 
   options = c("Africa", "Americas", "Asia", "Europe", "Oceania")
