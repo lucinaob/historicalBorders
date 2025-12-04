@@ -1,14 +1,19 @@
-#' Title
+#' Oceania Map
+#'
+#' @description
+#' Generates a map of Oceania at a given year since 1800.
+#'
 #'
 #' @param year The year the user wants to see reflected by borders.
 #' @param dataset The dataset of historical borders.
 #'
 #' @return This function will return a map of Oceania at a given time period.
-#' @export
 #'
 #' @examples
 #' mapOceania(1825)
 #' mapOceania(1875)
+#'
+#' @export
 mapOceania <- function(year, dataset = NULL){
 
   data <- historicalBorders::world

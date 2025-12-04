@@ -2,7 +2,7 @@
 % Please edit documentation in R/mapOceania.R
 \name{mapOceania}
 \alias{mapOceania}
-\title{Title}
+\title{Oceania Map}
 \usage{
 mapOceania(year, dataset = NULL)
 }
@@ -15,9 +15,10 @@ mapOceania(year, dataset = NULL)
 This function will return a map of Oceania at a given time period.
 }
 \description{
-Title
+Generates a map of Oceania at a given year since 1800.
 }
 \examples{
 mapOceania(1825)
 mapOceania(1875)
+
 }

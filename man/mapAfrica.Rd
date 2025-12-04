@@ -15,7 +15,7 @@ mapAfrica(year, dataset = NULL)
 This function will generate a historic map ggplot object of Africa at a given time period.
 }
 \description{
-Africa Map
+Generates a map of Africa at a given year since 1800.
 }
 \examples{
 mapAfrica(1800)

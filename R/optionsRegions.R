@@ -1,13 +1,17 @@
 #' Available Regions
 #'
+#' @description
+#' Prints regions that can be mapped using mapRegion(), along with the modern countries within these regions.
+#' Regions are defined using the United Nations' geoscheme designation.
+#'
+#'
 #' @param continent Optional, filters available regions to a single continent
 #'
 #' @returns A data frame of available regions
 #'
 #' @examples
-#'
-#' options_regions()
-#' options_regions("Africa)
+#' optionsRegions()
+#' optionsRegions("Africa")
 #'
 #' @export
 optionsRegions <- function(continent = NULL){
@@ -24,5 +28,5 @@ optionsRegions <- function(continent = NULL){
 
   }
 
-  View(regions)
+  print(regions)
 }

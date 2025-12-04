@@ -1,12 +1,15 @@
 #' Available Years
 #'
-#' Returns all years for which historical maps are available within the `historicalBorders` package.
-#' Calling a year from outside these options in a `historicalBorders` function will lead to rounding:
-#' if a user calls
+#' @description
+#' Returns all years for which historical maps are available within the historicalBorders package.
+#' If a user tries to visualize a map outside of these options, historicalBorders functions will round
+#' to the closest year given by this function.
 #'
-#' @returns
+#' @returns List of years for which maps are available.
 #'
 #' @examples
+#' optionsYears()
+#'
 #' @export
 optionsYears <- function(){
   data <- historicalBorders::world

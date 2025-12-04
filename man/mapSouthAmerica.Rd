@@ -15,7 +15,7 @@ mapSouthAmerica(year, dataset = NULL)
 This function will return a map of South America at a given time period.
 }
 \description{
-South America Map
+Generates a map of South America at a given year since 1800.
 }
 \examples{
 mapSouthAmerica(1800)

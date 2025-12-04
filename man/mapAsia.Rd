@@ -15,7 +15,7 @@ mapAsia(year, dataset = NULL)
 This function will return a map of Asia at a given time period.
 }
 \description{
-Asia Map
+Generates a map of Asia at a given year since 1800.
 }
 \examples{
 mapAsia(1820)

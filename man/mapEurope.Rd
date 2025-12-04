@@ -15,7 +15,7 @@ mapEurope(year, dataset = NULL)
 This function will return a map of Europe at a given time period.
 }
 \description{
-Europe Map
+Generates a map of Europe at a given year since 1800.
 }
 \examples{
 mapEurope(1800)

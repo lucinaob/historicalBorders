@@ -19,7 +19,8 @@ mapCustom(year, lat, long, dataset = NULL)
 A custom map of the latitude and longitudes specified by R.
 }
 \description{
-Custom Map
+Generates a map of a custom area at a given year since 1800. Area to be mapped can be specified
+using coordinate pairs to form a rectangle around a certain area of the globe.
 }
 \examples{
 mapCustom(1800, c(43.29, 57.10), c(74.21, 100.7))

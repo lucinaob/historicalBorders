@@ -1,5 +1,8 @@
 #' Africa Map
 #'
+#' @description
+#' Generates a map of Africa at a given year since 1800.
+#'
 #' @param year The year the user wants to see reflected by borders
 #' @param dataset The dataset of historical borders.
 #'

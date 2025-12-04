@@ -2,7 +2,7 @@
 % Please edit documentation in R/mapRegion.R
 \name{mapRegion}
 \alias{mapRegion}
-\title{mapRegion}
+\title{Map Historic Regions}
 \usage{
 mapRegion(year, region, dataset = NULL)
 }
@@ -14,12 +14,16 @@ mapRegion(year, region, dataset = NULL)
 \item{dataset}{The dataset of historical borders.}
 }
 \value{
-This function will return a map of a region at a given time period.
+A region at a given time period.
 }
 \description{
-mapRegion
+Maps a region of the world using historic borders.
+}
+\details{
+Available regions to map can be viewed using optionsRegions.
 }
 \examples{
 mapRegion(1825, "Eastern Europe")
 mapRegion(1875, "Western Africa")
+
 }

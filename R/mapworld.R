@@ -21,11 +21,11 @@
 #' @importFrom sf st_read
 #'
 #' @examples
-#' mapworld(1800)
-#' mapworld(1875)
+#' mapWorld(1800)
+#' mapWorld(1875)
 #'
 #' @export
-mapworld <- function(year, dataset = NULL){
+mapWorld <- function(year, dataset = NULL){
 
   if(!is.numeric(year)){
     stop("You must supply a numeric year")

@@ -1,27 +1,28 @@
-#' mapCountry
+#' Map Countries
+#'
+#' @description
+#' Map a certain country's historic borders.
+#'
+#' @details
+#' Note that country's names have changed over time, and referring to an area as it's modern
+#' name will not always return the desired outcome For example, calling mapCountry(1800, "Germany")
+#' will return a map of Germany from 1880, as the modern country of Germany did not exist at the
+#' turn of the 19th century.
 #'
 #' @param year The year the user wants to see reflected by borders.
-#' @param dataset The dataset of historical borders.
+#' @param country The country a user wishes to map
 #'
-#' @return This function will return a map of a country at a given time period.
+#' @return A map of a country at a given time.
 #' @export
 #'
 #' @examples
-#' mapCountry(1825, "Pakistan")
+#' mapCountry(1880, "Germany")
 #' mapCountry(1875, "Zambia")
 #'
 
-mapCountry <- function(year, country, rda_path = "data/world.rda") {
-  library(sf)
-  library(dplyr)
-  library(ggplot2)
+mapCountry <- function(year, country) {
 
-  e <- new.env()
-  load(rda_path, envir = e)
-  data <- e[[ls(e)[1]]]
-
-  data <- st_zm(data)
-  data <- st_make_valid(data)
+  data <- historicalBorders::world
 
   if (!country %in% data$NAME) {
     stop(paste0("Country '", country, "' not found in dataset."))
@@ -42,7 +43,7 @@ mapCountry <- function(year, country, rda_path = "data/world.rda") {
     closest
   }
 
-  data_sub <- data %>% filter(NAME == country, year == target_year)
+  data_sub <- data %>% dplyr::filter(data$NAME == country, year == target_year)
   data_sub <- data_sub[!st_is_empty(data_sub$geometry), ]
 
   if (nrow(data_sub) == 0) {
@@ -52,5 +53,6 @@ mapCountry <- function(year, country, rda_path = "data/world.rda") {
   ggplot(data_sub) +
     geom_sf() +
     coord_sf(lims_method = "geometry_bbox") +
+    theme_void() +
     ggtitle(paste0(country, " in ", target_year))
 }

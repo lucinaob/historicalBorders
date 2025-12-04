@@ -1,5 +1,10 @@
 #' Custom Map
 #'
+#' @description
+#' Generates a map of a custom area at a given year since 1800. Area to be mapped can be specified
+#' using coordinate pairs to form a rectangle around a certain area of the globe.
+#'
+#'
 #' @param year The year the user wants to see reflected by borders.
 #' @param lat The latitude of the area the user wants to map.
 #' @param long The longitude of the area the user wants to map.

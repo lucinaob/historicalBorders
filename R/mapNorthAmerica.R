@@ -1,4 +1,7 @@
-#' Title
+#' North America Map
+#'
+#' @description
+#' Generates a map of North America at a given year since 1800.
 #'
 #' @param year The year the user wants to see reflected by borders.
 #' @param dataset The dataset to map over historical borders.

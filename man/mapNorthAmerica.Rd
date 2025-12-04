@@ -2,7 +2,7 @@
 % Please edit documentation in R/mapNorthAmerica.R
 \name{mapNorthAmerica}
 \alias{mapNorthAmerica}
-\title{Title}
+\title{North America Map}
 \usage{
 mapNorthAmerica(year, dataset = NULL)
 }
@@ -15,7 +15,7 @@ mapNorthAmerica(year, dataset = NULL)
 This function will return a map of North American at a given time period.
 }
 \description{
-Title
+Generates a map of North America at a given year since 1800.
 }
 \examples{
 mapNorthAmerica(1800)

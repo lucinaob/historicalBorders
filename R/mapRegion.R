@@ -1,15 +1,23 @@
-#' mapRegion
+#' Map Historic Regions
+#'
+#' @description
+#' Maps a region of the world using historic borders.
+#'
+#' @details
+#' Available regions to map can be viewed using optionsRegions.
+#'
 #'
 #' @param year The year the user wants to see reflected by borders.
 #' @param dataset The dataset of historical borders.
 #' @param region The region a user wants to map
 #'
-#' @return This function will return a map of a region at a given time period.
-#' @export
+#' @return A region at a given time period.
 #'
 #' @examples
 #' mapRegion(1825, "Eastern Europe")
 #' mapRegion(1875, "Western Africa")
+#'
+#' @export
 
 mapRegion <- function(year, region, dataset = NULL) {
 
