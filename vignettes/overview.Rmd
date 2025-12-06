@@ -22,16 +22,16 @@ library(historicalBorders)
 
 ## Base Maps
 
-To plot the whole world at a given point in time, a user can use the `mapworld` function, specifying a certain year:
+To plot the whole world at a given point in time, a user can use the `mapWorld` function, specifying a certain year:
 
 ```{r}
-mapworld(1800)
+mapWorld(1800)
 ```
 
 If a user gives a year that is not included in the dataset, the function will display the map from the closest year:
 
 ```{r}
-mapworld(1875)
+mapWorld(1875)
 ```
 
 ## Visualizing Region Options 
@@ -39,7 +39,7 @@ mapworld(1875)
 The `optionsRegions()` function allows users to see a data frame display of regions within a specified continent by inputting`optionsRegions(["continent"])`:
 
 ```{r}
-options_regions("Africa")
+optionsRegions("Africa")
 ```
 
 ## Visualizing Year Options 
