@@ -17,7 +17,7 @@
 #' mapCustom(1800, c(43.29, 57.10), c(74.21, 100.7))
 #' mapCustom(1820, c(48.85, 55.5), c(2.35, 10.8))
 #'
-mapCustom <- function(year, lat, long, dataset = NULL){
+mapCustom <- function(year, lat, long, dataset = NULL, aesthetics = NULL){
 
   data <- historicalBorders::world
 
@@ -38,7 +38,13 @@ mapCustom <- function(year, lat, long, dataset = NULL){
   data <- data[data$year == year, ]
 
   if(!is.null(dataset)){
-    print("We will map geographic data here!")
+    data <- merge(data, dataset, key = "NAME", all.x = TRUE)
+    data |>
+      ggplot(aesthetics) +
+      geom_sf() +
+      ylim(long) +
+      xlim(lat) +
+      theme_void()
   } else{
     data |>
       ggplot() +

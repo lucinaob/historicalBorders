@@ -13,7 +13,7 @@
 #' @examples
 #' mapSouthAmerica(1800)
 #' mapSouthAmerica(1827)
-mapSouthAmerica <- function(year, dataset = NULL){
+mapSouthAmerica <- function(year, dataset = NULL, aesthetics = NULL){
 
   data <- historicalBorders::world
 
@@ -30,7 +30,13 @@ mapSouthAmerica <- function(year, dataset = NULL){
   data <- data[data$year == year, ]
 
   if(!is.null(dataset)){
-    print("We will map geographic data here!")
+    data <- merge(data, dataset, key = "NAME", all.x = TRUE)
+    data |>
+      ggplot(aesthetics) +
+      geom_sf() +
+      ylim(-55, 10) +
+      xlim(-83, -35) +
+      theme_void()
   } else{
     data |>
       ggplot() +

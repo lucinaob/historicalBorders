@@ -4,7 +4,7 @@
 \alias{mapRegion}
 \title{Map Historic Regions}
 \usage{
-mapRegion(year, region, dataset = NULL)
+mapRegion(year, region, dataset = NULL, aesthetics = NULL)
 }
 \arguments{
 \item{year}{The year the user wants to see reflected by borders.}

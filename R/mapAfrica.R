@@ -14,7 +14,7 @@
 #' @examples
 #' mapAfrica(1800)
 #' mapAfrica(1850)
-mapAfrica <- function(year, dataset = NULL){
+mapAfrica <- function(year, dataset = NULL, aesthetics = NULL){
 
   data <- historicalBorders::world
 
@@ -31,7 +31,13 @@ mapAfrica <- function(year, dataset = NULL){
   data <- data[data$year == year, ]
 
   if(!is.null(dataset)){
-    print("We will map geographic data here!")
+    data <- merge(data, dataset, key = "NAME", all.x = TRUE)
+    data |>
+      ggplot(aesthetics) +
+      geom_sf() +
+      ylim(-35, 35) +
+      xlim(-20, 52) +
+      theme_void()
   } else{
     data |>
       ggplot() +

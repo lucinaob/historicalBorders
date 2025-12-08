@@ -19,7 +19,7 @@
 #'
 #' @export
 
-mapRegion <- function(year, region, dataset = NULL) {
+mapRegion <- function(year, region, dataset = NULL, aesthetics = NULL) {
 
   region_bounds <- list(
     # AFRICA
@@ -84,11 +84,22 @@ mapRegion <- function(year, region, dataset = NULL) {
   ymin <- bounds["ymin"]
   ymax <- bounds["ymax"]
 
-  print(
-    ggplot(data) +
+
+  if(!is.null(dataset)){
+    data <- merge(data, dataset, key = "NAME", all.x = TRUE)
+    data |>
+      ggplot(aesthetics) +
       geom_sf() +
       coord_sf(xlim = c(xmin, xmax), ylim = c(ymin, ymax), expand = FALSE) +
       ggtitle(paste0(region, " in ", year)) +
       theme_void()
-  )
+  } else{
+    data |>
+      ggplot() +
+      geom_sf() +
+      coord_sf(xlim = c(xmin, xmax), ylim = c(ymin, ymax), expand = FALSE) +
+      ggtitle(paste0(region, " in ", year)) +
+      theme_void()
+  }
+
 }

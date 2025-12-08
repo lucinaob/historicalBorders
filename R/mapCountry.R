@@ -20,7 +20,7 @@
 #' mapCountry(1875, "Zambia")
 #'
 
-mapCountry <- function(year, country) {
+mapCountry <- function(year, country, dataset = NULL, aesthetics = NULL) {
 
   data <- historicalBorders::world
 
@@ -50,9 +50,22 @@ mapCountry <- function(year, country) {
     stop("Geometry for ", country, " in ", target_year, " is empty or invalid.")
   }
 
-  ggplot(data_sub) +
-    geom_sf() +
-    coord_sf(lims_method = "geometry_bbox") +
-    theme_void() +
-    ggtitle(paste0(country, " in ", target_year))
+
+  if(!is.null(dataset)){
+    data_sub <- merge(data_sub, dataset, key = "NAME", all.x = TRUE)
+    data_sub |>
+      ggplot(aesthetics) +
+      geom_sf() +
+      coord_sf(lims_method = "geometry_bbox") +
+      theme_void() +
+      ggtitle(paste0(country, " in ", target_year))
+  } else{
+    data_sub |>
+      ggplot() +
+      geom_sf() +
+      theme_void() +
+      coord_sf(lims_method = "geometry_bbox")  +
+      ggtitle(paste0(country, " in ", target_year))
+  }
+
 }

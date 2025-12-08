@@ -4,7 +4,7 @@
 \alias{mapEurope}
 \title{Europe Map}
 \usage{
-mapEurope(year, dataset = NULL)
+mapEurope(year, dataset = NULL, aesthetics = NULL)
 }
 \arguments{
 \item{year}{The year the user wants to see reflected by borders.}

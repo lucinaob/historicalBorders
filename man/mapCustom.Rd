@@ -4,7 +4,7 @@
 \alias{mapCustom}
 \title{Custom Map}
 \usage{
-mapCustom(year, lat, long, dataset = NULL)
+mapCustom(year, lat, long, dataset = NULL, aesthetics = NULL)
 }
 \arguments{
 \item{year}{The year the user wants to see reflected by borders.}

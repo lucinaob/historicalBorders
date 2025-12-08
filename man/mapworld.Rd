@@ -4,7 +4,7 @@
 \alias{mapWorld}
 \title{World Map}
 \usage{
-mapWorld(year, dataset = NULL)
+mapWorld(year, dataset = NULL, aesthetics = NULL)
 }
 \arguments{
 \item{year}{The year the user wants to see reflected by borders.}

@@ -14,7 +14,7 @@
 #' mapOceania(1875)
 #'
 #' @export
-mapOceania <- function(year, dataset = NULL){
+mapOceania <- function(year, dataset = NULL, aesthetics = NULL){
 
   data <- historicalBorders::world
 
@@ -31,7 +31,13 @@ mapOceania <- function(year, dataset = NULL){
   data <- data[data$year == year, ]
 
   if(!is.null(dataset)){
-    print("We will map geographic data here!")
+    data <- merge(data, dataset, key = "NAME", all.x = TRUE)
+    data |>
+      ggplot(aesthetics) +
+      geom_sf() +
+      ylim(-45, -4) +
+      xlim(110, 180) +
+      theme_void()
   } else{
     data |>
       ggplot() +

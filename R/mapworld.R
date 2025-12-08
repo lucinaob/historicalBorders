@@ -25,7 +25,7 @@
 #' mapWorld(1875)
 #'
 #' @export
-mapWorld <- function(year, dataset = NULL){
+mapWorld <- function(year, dataset = NULL, aesthetics = NULL){
 
   if(!is.numeric(year)){
     stop("You must supply a numeric year")
@@ -46,7 +46,11 @@ mapWorld <- function(year, dataset = NULL){
   data <- data[data$year == year, ]
 
   if(!is.null(dataset)){
-    print("We will map geographic data here!")
+    data <- merge(data, dataset, key = "NAME", all.x = TRUE)
+    data |>
+      ggplot(aesthetics) +
+      geom_sf() +
+      theme_void()
   } else{
     data |>
       ggplot() + geom_sf() + theme_void()

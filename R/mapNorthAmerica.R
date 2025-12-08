@@ -12,7 +12,7 @@
 #' mapNorthAmerica(1800)
 #'
 #' @export
-mapNorthAmerica <- function(year, dataset = NULL){
+mapNorthAmerica <- function(year, dataset = NULL, aesthetics = NULL){
 
   data <- historicalBorders::world
 
@@ -29,7 +29,13 @@ mapNorthAmerica <- function(year, dataset = NULL){
   data <- data[data$year == year, ]
 
   if(!is.null(dataset)){
-    print("We will map geographic data here!")
+    data <- merge(data, dataset, key = "NAME", all.x = TRUE)
+    data |>
+      ggplot(aesthetics) +
+      geom_sf() +
+      ylim(7, 90) +
+      xlim(-170, -60) +
+      theme_void()
   } else{
     data |>
       ggplot() +

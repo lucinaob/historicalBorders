@@ -15,7 +15,7 @@
 #' mapAsia(1890)
 #'
 #' @export
-mapAsia <- function(year, dataset = NULL){
+mapAsia <- function(year, dataset = NULL, aesthetics = NULL){
 
   data <- historicalBorders::world
 
@@ -32,7 +32,13 @@ mapAsia <- function(year, dataset = NULL){
   data <- data[data$year == year, ]
 
   if(!is.null(dataset)){
-    print("We will map geographic data here!")
+    data <- merge(data, dataset, key = "NAME", all.x = TRUE)
+    data |>
+      ggplot(aesthetics) +
+      geom_sf() +
+      ylim(-12, 80) +
+      xlim(30, 180) +
+      theme_void()
   } else{
     data |>
       ggplot() +

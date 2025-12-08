@@ -4,7 +4,7 @@
 \alias{mapAfrica}
 \title{Africa Map}
 \usage{
-mapAfrica(year, dataset = NULL)
+mapAfrica(year, dataset = NULL, aesthetics = NULL)
 }
 \arguments{
 \item{year}{The year the user wants to see reflected by borders}

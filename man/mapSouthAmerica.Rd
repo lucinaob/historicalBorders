@@ -4,7 +4,7 @@
 \alias{mapSouthAmerica}
 \title{South America Map}
 \usage{
-mapSouthAmerica(year, dataset = NULL)
+mapSouthAmerica(year, dataset = NULL, aesthetics = NULL)
 }
 \arguments{
 \item{year}{The year the user wants to see reflected by borders.}
