@@ -1,9 +1,21 @@
+---
+output: github_document
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # historicalBorders
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 This package allows users to visualize political boundaries for a selected continent, region, or country at a specific point in history. Building upon existing ways of visualizing spatial data, we aimed to create a way for R users to map data over historic borders from the last 200 years. In this, we can visualize data in a way that makes sense historically — showing the borders that people throughout history would have understood and lived within. Maps generated with this package are derived from the [historic-basemaps](https://github.com/aourednik/historical-basemaps) repository.
@@ -21,18 +33,20 @@ pak::pak("lucinaob/historicalBorders")
 
 To create a historic map using this package, you only have to specify a part of the world and a year! For example, to map the world in 1800, we only have to call:
 
-``` r
+```{r example, message=FALSE, warning=FALSE}
 library(historicalBorders)
 mapWorld(1800)
 ```
 
-<img src="man/figures/README-example-1.png" width="100%"/>
-
 The package also allows users to map data onto historic maps utilizing the `ggplot2` package. For example, the map below visualized population data of the world at 1900 onto a historic map (greyed out regions indicate no data)
 
-``` r
+```{r, echo=FALSE}
+options(scipen = 999)
+```
+
+
+```{r cars}
 mapWorld(1900, dataset = population1900, aesthetics = aes(fill = POP/1000000)) + 
   labs(fill = "Population (Millions)")
 ```
 
-<img src="man/figures/README-cars-1.png" width="100%"/>
