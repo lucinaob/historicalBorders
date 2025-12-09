@@ -9,7 +9,9 @@ mapAsia(year, dataset = NULL, aesthetics = NULL)
 \arguments{
 \item{year}{The year the user wants to see reflected by borders.}
 
-\item{dataset}{The dataset of historical borders.}
+\item{dataset}{Additional data to map over historical borders.}
+
+\item{aesthetics}{The aesthetic features (ex. fill, color) to map onto the borders}
 }
 \value{
 This function will return a map of Asia at a given time period.
@@ -19,6 +21,6 @@ Generates a map of Asia at a given year since 1800.
 }
 \examples{
 mapAsia(1820)
-mapAsia(1890)
+mapAsia(1900, dataset = population1900, aesthetics = aes(fill = POP))
 
 }

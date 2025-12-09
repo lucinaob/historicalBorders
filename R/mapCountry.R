@@ -11,6 +11,8 @@
 #'
 #' @param year The year the user wants to see reflected by borders.
 #' @param country The country a user wishes to map
+#' @param dataset Additional data to map over historical borders.
+#' @param aesthetics The aesthetic features (ex. fill, color) to map onto the borders
 #'
 #' @return A map of a country at a given time.
 #' @export
@@ -21,6 +23,34 @@
 #'
 
 mapCountry <- function(year, country, dataset = NULL, aesthetics = NULL) {
+
+  if(!is.numeric(year)){
+    stop("Year must be numeric (ex. 1800, 1925)")
+  }
+
+  if(length(year) > 1){
+    stop("Only one year can be mapped at a time.")
+  }
+
+  if(!is.null(aesthetics)){
+    if(is.null(dataset)){
+      stop("You must specify an additional dataset to specify aesthetics")
+    }
+    if(!startsWith(aesthetics, "aes")){
+      stop("Aesthetics must be wrapped in aes() \n
+           ex. aesthetics = aes(fill = POP)")
+    }
+  }
+
+  if(!is.null(dataset)){
+    if(is.null(aesthetics)){
+      stop("To visualize additional data, you must specify an aesthetic mapping")
+    }
+  }
+
+  if(length(country) > 1){
+    stop("You can only map one country at a time. You can map across regions using mapCustom()")
+  }
 
   data <- historicalBorders::world
 

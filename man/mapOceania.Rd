@@ -9,7 +9,9 @@ mapOceania(year, dataset = NULL, aesthetics = NULL)
 \arguments{
 \item{year}{The year the user wants to see reflected by borders.}
 
-\item{dataset}{The dataset of historical borders.}
+\item{dataset}{Additional data to map over historical borders.}
+
+\item{aesthetics}{The aesthetic features (ex. fill, color) to map onto the borders}
 }
 \value{
 This function will return a map of Oceania at a given time period.
@@ -19,6 +21,6 @@ Generates a map of Oceania at a given year since 1800.
 }
 \examples{
 mapOceania(1825)
-mapOceania(1875)
+mapOceania(1900, dataset = population1900, aesthetics = aes(fill = POP))
 
 }

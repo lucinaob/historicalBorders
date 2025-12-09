@@ -10,6 +10,10 @@ mapCountry(year, country, dataset = NULL, aesthetics = NULL)
 \item{year}{The year the user wants to see reflected by borders.}
 
 \item{country}{The country a user wishes to map}
+
+\item{dataset}{Additional data to map over historical borders.}
+
+\item{aesthetics}{The aesthetic features (ex. fill, color) to map onto the borders}
 }
 \value{
 A map of a country at a given time.
