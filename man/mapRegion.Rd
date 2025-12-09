@@ -25,7 +25,7 @@ Maps a region of the world using historic borders.
 Available regions to map can be viewed using optionsRegions.
 }
 \examples{
-mapRegion(1914, region = "Western Europe", dataset = ww1EuropeFatality, aesthetics = aes(fill = DEATHS_TOTAL))
+mapRegion(1914, region = "Western Europe", ww1EuropeFatality, aes(fill = DEATHS_TOTAL))
 mapRegion(1875, "Western Africa")
 
 }

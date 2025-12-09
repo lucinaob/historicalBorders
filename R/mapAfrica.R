@@ -25,16 +25,12 @@ mapAfrica <- function(year, dataset = NULL, aesthetics = NULL){
     stop("Only one year can be mapped at a time.")
   }
 
-  if(!is.null(aesthetics)){
-    if(is.null(dataset)){
-      stop("You must specify an additional dataset to specify aesthetics")
-    }
+  if(!is.null(aesthetics) && is.null(dataset)){
+    stop("You must specify an additional dataset to specify aesthetics")
   }
 
-  if(!is.null(dataset)){
-    if(is.null(aesthetics)){
-      stop("To visualize additional data, you must specify an aesthetic mapping")
-    }
+  if(!is.null(dataset) && is.null(aesthetics)){
+    stop("To visualize additional data, you must specify an aesthetic mapping")
   }
 
 

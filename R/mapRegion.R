@@ -15,7 +15,7 @@
 #' @return A region at a given time period.
 #'
 #' @examples
-#' mapRegion(1914, region = "Western Europe", dataset = ww1EuropeFatality, aesthetics = aes(fill = DEATHS_TOTAL))
+#' mapRegion(1914, region = "Western Europe", ww1EuropeFatality, aes(fill = DEATHS_TOTAL))
 #' mapRegion(1875, "Western Africa")
 #'
 #' @export
@@ -64,20 +64,12 @@ mapRegion <- function(year, region, dataset = NULL, aesthetics = NULL) {
     stop("Only one year can be mapped at a time.")
   }
 
-  if(!is.null(aesthetics)){
-    if(is.null(dataset)){
-      stop("You must specify an additional dataset to specify aesthetics")
-    }
-    if(!startsWith(aesthetics, "aes")){
-      stop("Aesthetics must be wrapped in aes() \n
-           ex. aesthetics = aes(fill = POP)")
-    }
+  if(!is.null(aesthetics) && is.null(dataset)){
+    stop("You must specify an additional dataset to specify aesthetics")
   }
 
-  if(!is.null(dataset)){
-    if(is.null(aesthetics)){
-      stop("To visualize additional data, you must specify an aesthetic mapping")
-    }
+  if(!is.null(dataset) && is.null(aesthetics)){
+    stop("To visualize additional data, you must specify an aesthetic mapping")
   }
 
   if(length(region) > 1){

@@ -26,6 +26,6 @@ using coordinate pairs to form a rectangle around a certain area of the globe.
 }
 \examples{
 mapCustom(1800, c(19.5, 45.4), c(25.3, 41.2))
-mapCustom(1900, c(62.7, 130.6), c(-3.3, 44.2), dataset = population1900, aesthetics = aes(fill = POP))
+mapCustom(1900, c(62.7, 130.6), c(-3.3, 44.2), population1900, aes(fill = POP))
 
 }
