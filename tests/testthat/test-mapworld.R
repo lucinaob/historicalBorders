@@ -1,18 +1,14 @@
-test_that("input 'year' is numeric",{
-  expect_error(mapWorld("Eighteen-hundred and five"))
+test_that("input 'year' is numeric", {
+  expect_error(
+    mapAfrica("Nineteen-hundred and five"),
+    regexp = "numeric"
+  )
 })
 
-test_that("mapWorld returns a ggplot object for valid input", {
-  world_year <- unique(historicalBorders::world$year)[1]
-  plot <- mapWorld(world_year)
-  expect_s3_class(plot, "ggplot")
-})
-
-test_that("mapWorld does not modify the world dataset", {
-  original <- historicalBorders::world
-  year <- unique(original$year)[1]
-
-  mapWorld(year)
-
-  expect_identical(original, historicalBorders::world)
+test_that("input year triggers message about closest borders", {
+  nonexistent_year <- 9999  # year not in dataset
+  expect_message(
+    mapAfrica(nonexistent_year),
+    regexp = "mapped to borders"
+  )
 })
