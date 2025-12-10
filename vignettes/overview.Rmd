@@ -34,7 +34,7 @@ If a user gives a year that is not included in the dataset, the function will di
 mapWorld(1875)
 ```
 
-## Visualizing Region Options 
+## Visualizing Region Options
 
 The `optionsRegions()` function allows users to see a data frame display of regions within a specified continent by inputting`optionsRegions(["continent"])`:
 
@@ -42,9 +42,9 @@ The `optionsRegions()` function allows users to see a data frame display of regi
 optionsRegions("Africa")
 ```
 
-## Visualizing Year Options 
+## Visualizing Year Options
 
-To visualize the years available to choose from, users can call the `optionsYears()` function: 
+To visualize the years available to choose from, users can call the `optionsYears()` function:
 
 ```{r}
 optionsYears()
@@ -72,7 +72,7 @@ Six options are available:
 
 -   `mapOceania()`
 
-## Mapping Regions 
+## Mapping Regions
 
 To plot a region of the world, users can use the `mapRegion()` function to map a region on a given year with `mapRegion([year],["region"])`:
 
@@ -80,7 +80,7 @@ To plot a region of the world, users can use the `mapRegion()` function to map a
 mapRegion(1825, "Eastern Europe")
 ```
 
-## Mapping Countries 
+## Mapping Countries
 
 If a user wants to visualize a specific country at a specified time, they can input the year and country name to the function `mapCountry()`to give a map of that country's borders. The user should input `mapCountry([year], ["country name"])`:
 
@@ -95,3 +95,34 @@ If a user wants to only visualize a certain area of the world, they can visualiz
 ```{r}
 mapCustom(1900, c(20, 65), c(15, 45))
 ```
+
+# random animated :p
+
+library(animation)
+
+```{r, message=FALSE}
+library(animation)
+
+years <- unique(citiesPop$YEAR)
+
+years <- years[years > 1900]
+
+plots = c()
+
+ani.options(res = 900)
+
+saveGIF({
+  for(year in years){
+    plot <- mapWorld(year) + 
+      geom_point(data = filter(citiesPop, YEAR == year), 
+                 aes(x = LONG, y = LAT, size = POP, alpha = .5), color = 'red') +
+      labs(title = paste0("Largest Cities in the World, ", year)) +
+      theme(legend.position = "none") +
+      scale_size_continuous(limits = c(4288091, 41913860))
+    print(plot)
+  }
+}, interval = .75, movie.name="test.gif", ani.width = 750, ani.height = 400)
+
+```
+
+![](test.gif)
