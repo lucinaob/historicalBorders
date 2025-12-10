@@ -21,3 +21,5 @@ Depends:
     sf,
     dplyr
 VignetteBuilder: knitr
+Imports: 
+    animation
