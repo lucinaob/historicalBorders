@@ -8,13 +8,14 @@
 #'
 #'
 #' @param year The year the user wants to see reflected by borders.
-#' @param dataset The dataset of historical borders.
+#' @param dataset Additional data to map over historical borders.
 #' @param region The region a user wants to map
+#' @param aesthetics The aesthetic features (ex. fill, color) to map onto the borders
 #'
 #' @return A region at a given time period.
 #'
 #' @examples
-#' mapRegion(1825, "Eastern Europe")
+#' mapRegion(1914, region = "Western Europe", ww1EuropeFatality, aes(fill = DEATHS_TOTAL))
 #' mapRegion(1875, "Western Africa")
 #'
 #' @export
@@ -54,6 +55,26 @@ mapRegion <- function(year, region, dataset = NULL, aesthetics = NULL) {
     "Micronesia"   = c(xmin = 130, xmax = 165, ymin = 0,   ymax = 15),
     "Polynesia"    = c(xmin = -160, xmax = -110, ymin = -30, ymax = 10)
   )
+
+  if(!is.numeric(year)){
+    stop("Year must be numeric (ex. 1800, 1925)")
+  }
+
+  if(length(year) > 1){
+    stop("Only one year can be mapped at a time.")
+  }
+
+  if(!is.null(aesthetics) && is.null(dataset)){
+    stop("You must specify an additional dataset to specify aesthetics")
+  }
+
+  if(!is.null(dataset) && is.null(aesthetics)){
+    stop("To visualize additional data, you must specify an aesthetic mapping")
+  }
+
+  if(length(region) > 1){
+    stop("You can only map one region at a time. You can map across regions using mapCustom()")
+  }
 
   if (!region %in% names(region_bounds)) {
     stop(

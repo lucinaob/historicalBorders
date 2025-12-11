@@ -11,7 +11,9 @@ mapRegion(year, region, dataset = NULL, aesthetics = NULL)
 
 \item{region}{The region a user wants to map}
 
-\item{dataset}{The dataset of historical borders.}
+\item{dataset}{Additional data to map over historical borders.}
+
+\item{aesthetics}{The aesthetic features (ex. fill, color) to map onto the borders}
 }
 \value{
 A region at a given time period.
@@ -23,7 +25,7 @@ Maps a region of the world using historic borders.
 Available regions to map can be viewed using optionsRegions.
 }
 \examples{
-mapRegion(1825, "Eastern Europe")
+mapRegion(1914, region = "Western Europe", ww1EuropeFatality, aes(fill = DEATHS_TOTAL))
 mapRegion(1875, "Western Africa")
 
 }

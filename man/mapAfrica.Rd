@@ -9,7 +9,9 @@ mapAfrica(year, dataset = NULL, aesthetics = NULL)
 \arguments{
 \item{year}{The year the user wants to see reflected by borders}
 
-\item{dataset}{The dataset of historical borders.}
+\item{dataset}{Additional data to map over historical borders.}
+
+\item{aesthetics}{The aesthetic features (ex. fill, color) to map onto the borders}
 }
 \value{
 This function will generate a historic map ggplot object of Africa at a given time period.
@@ -19,5 +21,5 @@ Generates a map of Africa at a given year since 1800.
 }
 \examples{
 mapAfrica(1800)
-mapAfrica(1850)
+mapAfrica(1900, dataset = population1900, aesthetics = aes(fill = POP))
 }

@@ -5,17 +5,34 @@
 #'
 #'
 #' @param year The year the user wants to see reflected by borders.
-#' @param dataset The dataset of historical borders.
+#' @param dataset Additional data to map over historical borders.
+#' @param aesthetics The aesthetic features (ex. fill, color) to map onto the borders
 #'
 #' @return This function will return a map of Asia at a given time period.
 #'
 #'
 #' @examples
 #' mapAsia(1820)
-#' mapAsia(1890)
+#' mapAsia(1900, dataset = population1900, aesthetics = aes(fill = POP))
 #'
 #' @export
 mapAsia <- function(year, dataset = NULL, aesthetics = NULL){
+
+  if(!is.numeric(year)){
+    stop("Year must be numeric (ex. 1800, 1925)")
+  }
+
+  if(length(year) > 1){
+    stop("Only one year can be mapped at a time.")
+  }
+
+  if(!is.null(aesthetics) && is.null(dataset)){
+    stop("You must specify an additional dataset to specify aesthetics")
+  }
+
+  if(!is.null(dataset) && is.null(aesthetics)){
+    stop("To visualize additional data, you must specify an aesthetic mapping")
+  }
 
   data <- historicalBorders::world
 

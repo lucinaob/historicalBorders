@@ -13,7 +13,9 @@ mapCustom(year, lat, long, dataset = NULL, aesthetics = NULL)
 
 \item{long}{The longitude of the area the user wants to map.}
 
-\item{dataset}{The dataset of historical borders.}
+\item{dataset}{Additional data to map over historical borders.}
+
+\item{aesthetics}{The aesthetic features (ex. fill, color) to map onto the borders}
 }
 \value{
 A custom map of the latitude and longitudes specified by R.
@@ -23,7 +25,7 @@ Generates a map of a custom area at a given year since 1800. Area to be mapped c
 using coordinate pairs to form a rectangle around a certain area of the globe.
 }
 \examples{
-mapCustom(1800, c(43.29, 57.10), c(74.21, 100.7))
-mapCustom(1820, c(48.85, 55.5), c(2.35, 10.8))
+mapCustom(1800, c(19.5, 45.4), c(25.3, 41.2))
+mapCustom(1900, c(62.7, 130.6), c(-3.3, 44.2), population1900, aes(fill = POP))
 
 }

@@ -9,7 +9,9 @@ mapEurope(year, dataset = NULL, aesthetics = NULL)
 \arguments{
 \item{year}{The year the user wants to see reflected by borders.}
 
-\item{dataset}{The dataset of historical borders.}
+\item{dataset}{Additional data to map over historical borders.}
+
+\item{aesthetics}{The aesthetic features (ex. fill, color) to map onto the borders}
 }
 \value{
 This function will return a map of Europe at a given time period.
@@ -19,5 +21,5 @@ Generates a map of Europe at a given year since 1800.
 }
 \examples{
 mapEurope(1800)
-mapEurope(1849)
+mapEurope(1914, dataset = ww1EuropeFatality, aesthetics = aes(fill = DEATHS_TOTAL))
 }
