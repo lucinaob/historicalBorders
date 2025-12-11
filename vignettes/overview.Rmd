@@ -34,6 +34,13 @@ If a user gives a year that is not included in the dataset, the function will di
 mapWorld(1875)
 ```
 
+```{r}
+mapWorld(1900, dataset = population1900, aesthetics = aes(fill = POP/1000000)) +
+  labs(title = "World Population, 1900",
+       subtitle = "Grey indicates missing data",
+       fill = "Population, in millions")
+```
+
 ## Visualizing Region Options
 
 The `optionsRegions()` function allows users to see a data frame display of regions within a specified continent by inputting`optionsRegions(["continent"])`:
@@ -58,6 +65,12 @@ If a user only wants to visualize a certain continent, they can do so by choosin
 mapAsia(1900)
 ```
 
+```{r}
+mapEurope(1914, dataset = ww1EuropeFatality, aesthetics = aes(fill = DEATHS_TOTAL/1000000)) +
+  labs(title = "Deaths in World War 1",
+       fill = "Deaths, in millions")
+```
+
 Six options are available:
 
 -   `mapNorthAmerica()`
@@ -77,7 +90,13 @@ Six options are available:
 To plot a region of the world, users can use the `mapRegion()` function to map a region on a given year with `mapRegion([year],["region"])`:
 
 ```{r}
-mapRegion(1825, "Eastern Europe")
+mapRegion(1825, "Southern Europe")
+```
+
+One can also view all available regions using `optionsRegions`:
+
+```{r}
+View(optionsRegions())
 ```
 
 ## Mapping Countries
@@ -85,7 +104,7 @@ mapRegion(1825, "Eastern Europe")
 If a user wants to visualize a specific country at a specified time, they can input the year and country name to the function `mapCountry()`to give a map of that country's borders. The user should input `mapCountry([year], ["country name"])`:
 
 ```{r}
-mapCountry(1900, "United States")
+mapCountry(1815, "United States")
 ```
 
 ## Custom Mapping
@@ -96,9 +115,7 @@ If a user wants to only visualize a certain area of the world, they can visualiz
 mapCustom(1900, c(20, 65), c(15, 45))
 ```
 
-# random animated :p
-
-library(animation)
+# Mapping Coordinates
 
 ```{r, message=FALSE}
 library(animation)
