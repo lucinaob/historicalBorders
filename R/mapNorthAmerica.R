@@ -14,6 +14,10 @@
 #' @export
 mapNorthAmerica <- function(year, dataset = NULL, aesthetics = NULL){
 
+  if(!is.numeric(year)){
+    stop("You must supply a numeric year")
+  }
+
   data <- historicalBorders::world
 
   options <- unique(data$year)
