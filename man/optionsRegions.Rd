@@ -14,7 +14,10 @@ A data frame of available regions
 }
 \description{
 Prints regions that can be mapped using mapRegion(), along with the modern countries within these regions.
-Regions are defined using the United Nations' geoscheme designation.
+}
+\details{
+Regions are defined using the United Nations' geoscheme designations. If a user wishes to map a region
+that is not available here, they can use the mapCustom function.
 }
 \examples{
 optionsRegions()

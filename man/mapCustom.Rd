@@ -24,6 +24,14 @@ A custom map of the latitude and longitudes specified by R.
 Generates a map of a custom area at a given year since 1800. Area to be mapped can be specified
 using coordinate pairs to form a rectangle around a certain area of the globe.
 }
+\details{
+This function will generate a map of a custom area for any year since 1800 that the user
+inputs. The user can specify a rectangular area to map by inputting latitude and longitude coordinates.
+If a given year is not in the database, the function will show a map for the closest year via
+rounding. A user can also provide additional data to be mapped over these borders, in which case
+they must also provide an aesthetic specification for which variables(s) will be mapped and how.
+The function will return a ggplot2 object, from which a user can further customize their output.
+}
 \examples{
 mapCustom(1800, c(19.5, 45.4), c(25.3, 41.2))
 mapCustom(1900, c(62.7, 130.6), c(-3.3, 44.2), population1900, aes(fill = POP))

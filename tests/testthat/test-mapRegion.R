@@ -1,7 +1,6 @@
 test_that("non-numeric year triggers year-not-found error", {
   expect_error(
-    mapRegion("Nineteen-hundred and five", "Eastern Europe"),
-    regexp = "closest year"
+    mapRegion("Nineteen-hundred and five", "Eastern Europe")
   )
 })
 

@@ -11,6 +11,8 @@ List of years for which maps are available.
 }
 \description{
 Returns all years for which historical maps are available within the historicalBorders package.
+}
+\details{
 If a user tries to visualize a map outside of these options, historicalBorders functions will round
 to the closest year given by this function.
 }

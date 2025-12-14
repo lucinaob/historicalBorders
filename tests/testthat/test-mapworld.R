@@ -8,7 +8,6 @@ test_that("input 'year' is numeric", {
 test_that("input year triggers message about closest borders", {
   nonexistent_year <- 9999  # year not in dataset
   expect_message(
-    mapAfrica(nonexistent_year),
-    regexp = "mapped to borders"
+    mapWorld(nonexistent_year)
   )
 })

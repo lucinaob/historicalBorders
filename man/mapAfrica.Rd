@@ -19,6 +19,13 @@ This function will generate a historic map ggplot object of Africa at a given ti
 \description{
 Generates a map of Africa at a given year since 1800.
 }
+\details{
+This function will generate a map of the African continent for any year since 1800 that the user
+inputs. If a given year is not in the database, the function will show a map for the closest year via
+rounding. A user can also provide additional data to be mapped over these borders, in which case
+they must also provide an aesthetic specification for which variables(s) will be mapped and how.
+The function will return a ggplot2 object, from which a user can further customize their output.
+}
 \examples{
 mapAfrica(1800)
 mapAfrica(1900, dataset = population1900, aesthetics = aes(fill = POP))
