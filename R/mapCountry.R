@@ -4,6 +4,12 @@
 #' Map a certain country's historic borders.
 #'
 #' @details
+#' This function will generate a map of any country for any year since 1800 that the user
+#' inputs. If a given year is not in the database, the function will show a map for the closest year via
+#' rounding. A user can also provide additional data to be mapped over these borders, in which case
+#' they must also provide an aesthetic specification for which variable(s) will be mapped and how.
+#' The function will return a ggplot2 object, from which a user can further customize their output.
+#'
 #' Note that country's names have changed over time, and referring to an area as it's modern
 #' name will not always return the desired outcome For example, calling mapCountry(1800, "Germany")
 #' will return a map of Germany from 1880, as the modern country of Germany did not exist at the

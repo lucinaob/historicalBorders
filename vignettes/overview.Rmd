@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 library(historicalBorders)
 ```
 
-`historicalBorders` is an R package for producing visualizations of historical maps. Utilizing the `sf` and `ggplot2` packages, `historicalBorders` allows users to plot data over historical borders, from the 1800s until today. Maps are available in 50-year increments, built off of the [\`historic-basemaps\`](https://github.com/aourednik/historical-basemaps) repo.
+`historicalBorders` is an R package for producing visualizations of historical maps. Utilizing the `sf` and `ggplot2` packages, `historicalBorders` allows users to plot data over historical borders, from the 1800s until today. Maps are available in 50-year increments, built off of the [historic-basemaps](https://github.com/aourednik/historical-basemaps) repo.
 
 ## Base Maps
 
@@ -34,27 +34,19 @@ If a user gives a year that is not included in the dataset, the function will di
 mapWorld(1875)
 ```
 
+To understand the years available to choose from, users can call the `optionsYears()` function:
+
+```{r}
+optionsYears()
+```
+
+## 
+
 ```{r}
 mapWorld(1900, dataset = population1900, aesthetics = aes(fill = POP/1000000)) +
   labs(title = "World Population, 1900",
        subtitle = "Grey indicates missing data",
        fill = "Population, in millions")
-```
-
-## Visualizing Region Options
-
-The `optionsRegions()` function allows users to see a data frame display of regions within a specified continent by inputting`optionsRegions(["continent"])`:
-
-```{r}
-optionsRegions("Africa")
-```
-
-## Visualizing Year Options
-
-To visualize the years available to choose from, users can call the `optionsYears()` function:
-
-```{r}
-optionsYears()
 ```
 
 ## Mapping Continents
@@ -99,6 +91,10 @@ One can also view all available regions using `optionsRegions`:
 View(optionsRegions())
 ```
 
+```{r}
+optionsRegions("Africa")
+```
+
 ## Mapping Countries
 
 If a user wants to visualize a specific country at a specified time, they can input the year and country name to the function `mapCountry()`to give a map of that country's borders. The user should input `mapCountry([year], ["country name"])`:
@@ -117,7 +113,7 @@ mapCustom(1900, c(20, 65), c(15, 45))
 
 # Mapping Coordinates
 
-```{r, message=FALSE}
+```{r eval=FALSE, message=FALSE, include=FALSE}
 library(animation)
 
 years <- unique(citiesPop$YEAR)
@@ -139,7 +135,6 @@ saveGIF({
     print(plot)
   }
 }, interval = .75, movie.name="test.gif", ani.width = 750, ani.height = 400)
-
 ```
 
 ![](test.gif)

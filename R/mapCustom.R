@@ -5,6 +5,14 @@
 #' using coordinate pairs to form a rectangle around a certain area of the globe.
 #'
 #'
+#' @details
+#' This function will generate a map of a custom area for any year since 1800 that the user
+#' inputs. The user can specify a rectangular area to map by inputting latitude and longitude coordinates.
+#' If a given year is not in the database, the function will show a map for the closest year via
+#' rounding. A user can also provide additional data to be mapped over these borders, in which case
+#' they must also provide an aesthetic specification for which variables(s) will be mapped and how.
+#' The function will return a ggplot2 object, from which a user can further customize their output.
+#'
 #' @param year The year the user wants to see reflected by borders.
 #' @param lat The latitude of the area the user wants to map.
 #' @param long The longitude of the area the user wants to map.
